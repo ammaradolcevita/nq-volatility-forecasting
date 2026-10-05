@@ -1,0 +1,38 @@
+\begin{table}[htbp]
+\centering\small
+\caption{HAR-family estimates (Newey-West HAC) (scale-free specification)}
+\label{tab:har_coef_ratio}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+Model & Variable & Coefficient & NW t-stat & p-value \\
+\midrule
+HAR & const & 0.4234 & 11.8663 & 0.0000 \\
+HAR & r\_har\_daily & 0.2015 & 6.1416 & 0.0000 \\
+HAR & r\_har\_weekly & 0.3951 & 7.9536 & 0.0000 \\
+HAR & In-sample R2 & 0.1099 & -- & -- \\
+HAR & NW lags & 14.0000 & -- & -- \\
+HAR-X & const & 0.3315 & 7.3160 & 0.0000 \\
+HAR-X & r\_har\_daily & 0.1335 & 4.1387 & 0.0000 \\
+HAR-X & r\_har\_weekly & 0.2435 & 5.2414 & 0.0000 \\
+HAR-X & r\_asia\_range & 0.1623 & 3.3036 & 0.0010 \\
+HAR-X & asia\_dir & -0.0052 & -0.6654 & 0.5058 \\
+HAR-X & r\_london\_range & 0.2834 & 4.9418 & 0.0000 \\
+HAR-X & london\_dir & -0.0162 & -2.0556 & 0.0398 \\
+HAR-X & r\_ndog\_range & 0.1024 & 3.3068 & 0.0009 \\
+HAR-X & month & -0.0011 & -0.4720 & 0.6369 \\
+HAR-X & weekday & -0.0067 & -1.1168 & 0.2641 \\
+HAR-X & impact\_medium & 0.0138 & 0.6056 & 0.5448 \\
+HAR-X & impact\_high & 0.0883 & 4.2110 & 0.0000 \\
+HAR-X & In-sample R2 & 0.2186 & -- & -- \\
+HAR-X & NW lags & 14.0000 & -- & -- \\
+LogHAR & const & -0.0458 & -6.0769 & 0.0000 \\
+LogHAR & r\_har\_daily & 0.1843 & 7.3969 & 0.0000 \\
+LogHAR & r\_har\_weekly & 0.4096 & 9.8456 & 0.0000 \\
+LogHAR & In-sample R2 & 0.1273 & -- & -- \\
+LogHAR & NW lags & 14.0000 & -- & -- \\
+LogHAR & Duan smearing factor & 1.0831 & -- & -- \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

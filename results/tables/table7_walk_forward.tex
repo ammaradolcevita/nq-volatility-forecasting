@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Expanding-window out-of-sample $R^2$ by fold}
+\label{tab:walkforward}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+Model & Category & 2015-16 & 2017-18 & 2019-20 & 2021-22 & 2023-25 & Mean R2 & SD R2 & Mean MAE & Folds beating HAR (R2) \\
+\midrule
+HAR & Econometric & 0.144 & 0.490 & 0.444 & 0.322 & 0.243 & 0.329 & 0.142 & 30.883 & 0 \\
+HAR-X & Econometric & 0.265 & 0.544 & 0.505 & 0.336 & 0.356 & 0.401 & 0.118 & 29.158 & 5 \\
+LogHAR & Econometric & 0.143 & 0.469 & 0.426 & 0.325 & 0.258 & 0.324 & 0.131 & 30.652 & 2 \\
+Linear Regression & Linear & 0.265 & 0.544 & 0.505 & 0.336 & 0.356 & 0.401 & 0.118 & 29.158 & 5 \\
+Ridge & Linear & 0.273 & 0.538 & 0.508 & 0.335 & 0.356 & 0.402 & 0.115 & 29.094 & 5 \\
+Lasso & Linear & 0.267 & 0.539 & 0.505 & 0.336 & 0.356 & 0.401 & 0.116 & 29.146 & 5 \\
+Elastic Net & Linear & 0.274 & 0.534 & 0.506 & 0.335 & 0.356 & 0.401 & 0.113 & 29.136 & 5 \\
+Huber & Linear & 0.256 & 0.486 & 0.508 & 0.221 & 0.332 & 0.361 & 0.131 & 29.329 & 3 \\
+Adaptive Lasso & Linear & 0.259 & 0.541 & 0.505 & 0.335 & 0.356 & 0.399 & 0.119 & 29.160 & 5 \\
+Bayesian Ridge & Linear & 0.271 & 0.541 & 0.506 & 0.335 & 0.357 & 0.402 & 0.116 & 29.135 & 5 \\
+Theil-Sen & Linear & 0.265 & 0.546 & 0.506 & 0.332 & 0.357 & 0.401 & 0.119 & 29.151 & 5 \\
+Decision Tree & Tree & 0.071 & 0.270 & 0.266 & 0.052 & 0.162 & 0.164 & 0.103 & 33.973 & 0 \\
+Random Forest & Tree & 0.199 & 0.341 & 0.277 & 0.264 & 0.276 & 0.272 & 0.050 & 30.372 & 2 \\
+Extra Trees & Tree & 0.122 & 0.211 & 0.153 & 0.164 & 0.248 & 0.180 & 0.050 & 31.578 & 1 \\
+Gradient Boosting & Tree & 0.225 & 0.325 & 0.344 & 0.090 & 0.275 & 0.252 & 0.102 & 31.789 & 2 \\
+XGBoost & Tree & 0.202 & 0.235 & 0.350 & 0.070 & 0.236 & 0.219 & 0.100 & 32.080 & 1 \\
+LightGBM & Tree & 0.191 & 0.265 & 0.338 & 0.164 & 0.248 & 0.241 & 0.068 & 31.924 & 2 \\
+CatBoost & Tree & 0.231 & 0.267 & 0.299 & 0.155 & 0.286 & 0.248 & 0.057 & 31.304 & 2 \\
+LSTM & Deep learning & 0.095 & 0.197 & -0.176 & -0.435 & 0.065 & -0.051 & 0.255 & 38.370 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{2pt}\footnotesize\textit{Notes:} Columns are test windows; each fold trains on all data up to the year before its test window. Identical test days for all models; identical predictors for HAR-X and all machine-learning models. LSTM: average of 5 seeds per fold.
+\end{table}

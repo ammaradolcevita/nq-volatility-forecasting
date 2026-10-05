@@ -1,0 +1,10 @@
+       Sample  Days  Midpoint reached  Rate (%)  Binomial p (H0: 50%, one-sided)
+     All days  4021              2825 70.256155                    7.403769e-150
+Non-zero gaps  3999              2803 70.092523                    1.291397e-146
+          Days  Rate (%)  Min gap (points)  Max gap (points)
+Quintile                                                    
+1          829     92.88              0.25              5.75
+2          794     79.97              6.00             13.25
+3          785     64.71             13.50             28.00
+4          792     63.26             28.25             65.50
+5          799     48.69             65.75            991.00

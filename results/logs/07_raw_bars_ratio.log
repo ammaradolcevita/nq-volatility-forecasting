@@ -1,0 +1,116 @@
+Raw bars: NQ.txt
+Specification: ratio
+Read 191872 bars, 2009-09-27 18:00:00 -> 2025-11-26 03:00:00
+
+VALIDATION: session aggregates recomputed from the bars vs data/ml_dataset1.csv (4021 days)
+  asia_range    exact match (|diff| <= 1e-9): 4021/4021 = 1.000000   max |diff| = 0
+  asia_dir      exact match (|diff| <= 1e-9): 4021/4021 = 1.000000   max |diff| = 0
+  london_range  exact match (|diff| <= 1e-9): 4021/4021 = 1.000000   max |diff| = 0
+  london_dir    exact match (|diff| <= 1e-9): 4021/4021 = 1.000000   max |diff| = 0
+
+  Days with at least one missing bar: 6 (Asia 6, London 0); missing bars in total: 13 of 60315. Filled with range 0.
+    2010-03-11  missing: asia_bar2
+    2013-03-07  missing: asia_bar1
+    2014-08-25  missing: asia_bar1, asia_bar2, asia_bar3, asia_bar4
+    2015-07-01  missing: asia_bar1
+    2016-09-08  missing: asia_bar5
+    2019-02-27  missing: asia_bar1, asia_bar2, asia_bar3, asia_bar4, asia_bar5
+  In the modelling sample (3999 days): 6 days with missing bars
+  N train 3030, N test 969
+
+EVIDENCE (spec=ratio; variables as they enter the models, full modelling sample and training sample)
+  corr(sum of asia bar ranges, asia_range) [all]                            0.9326
+  corr(max of asia bar ranges, asia_range) [all]                            0.8945
+  mean pairwise corr among 9 asia bars [all]                                0.5334
+  corr(sum of london bar ranges, london_range) [all]                        0.8879
+  corr(max of london bar ranges, london_range) [all]                        0.8746
+  mean pairwise corr among 6 london bars [all]                              0.4998
+  mean pairwise corr among 15 bars [all]                                    0.4703
+  min pairwise corr among 15 bars [all]                                     0.3147
+  max pairwise corr among 15 bars [all]                                     0.6727
+  mean VIF of the 15 bar ranges (among themselves) [all]                    2.0695
+  max VIF of the 15 bar ranges (among themselves) [all]                     2.6470
+  corr(asia_range, target) [all]                                            0.3227
+  corr(london_range, target) [all]                                          0.3698
+  mean corr(single bar range, target) [all]                                 0.3064
+  max corr(single bar range, target) [all]                                  0.3504
+  corr(sum of asia bar ranges, asia_range) [train]                          0.9352
+  corr(max of asia bar ranges, asia_range) [train]                          0.8993
+  mean pairwise corr among 9 asia bars [train]                              0.5473
+  corr(sum of london bar ranges, london_range) [train]                      0.8917
+  corr(max of london bar ranges, london_range) [train]                      0.8827
+  mean pairwise corr among 6 london bars [train]                            0.5101
+  mean pairwise corr among 15 bars [train]                                  0.4828
+  min pairwise corr among 15 bars [train]                                   0.3220
+  max pairwise corr among 15 bars [train]                                   0.6994
+  mean VIF of the 15 bar ranges (among themselves) [train]                  2.1678
+  max VIF of the 15 bar ranges (among themselves) [train]                   2.9146
+  corr(asia_range, target) [train]                                          0.3221
+  corr(london_range, target) [train]                                        0.3706
+  mean corr(single bar range, target) [train]                               0.3087
+  max corr(single bar range, target) [train]                                0.3651
+
+Set S (k=11): r_har_daily, r_har_weekly, r_asia_range, asia_dir, r_london_range, london_dir, r_ndog_range, month, weekday, impact_medium, impact_high
+
+Set B (k=24): r_har_daily, r_har_weekly, r_asia_bar1, r_asia_bar2, r_asia_bar3, r_asia_bar4, r_asia_bar5, r_asia_bar6, r_asia_bar7, r_asia_bar8, r_asia_bar9, asia_dir, r_london_bar1, r_london_bar2, r_london_bar3, r_london_bar4, r_london_bar5, r_london_bar6, london_dir, r_ndog_range, month, weekday, impact_medium, impact_high
+
+Set S+B (k=26): r_har_daily, r_har_weekly, r_asia_range, asia_dir, r_london_range, london_dir, r_ndog_range, month, weekday, impact_medium, impact_high, r_asia_bar1, r_asia_bar2, r_asia_bar3, r_asia_bar4, r_asia_bar5, r_asia_bar6, r_asia_bar7, r_asia_bar8, r_asia_bar9, r_london_bar1, r_london_bar2, r_london_bar3, r_london_bar4, r_london_bar5, r_london_bar6
+
+MAIN SPLIT (train <= 2021-12-31, test 2022-01-03 .. 2025-11-25)
+  set S    fitted in    1.2s
+  set B    fitted in    1.7s
+  set S+B  fitted in    1.8s
+
+Sanity check: set S vs results/tables/table5_main_results_ratio.csv (test R2)
+  HAR-X          S 0.3556495202   Table 5 0.3556495202   diff  5.55e-17   OK
+  Elastic Net    S 0.3518623040   Table 5 0.3518623040   diff  0.00e+00   OK
+  Random Forest  S 0.3771507266   Table 5 0.3771507266   diff  0.00e+00   OK
+  CatBoost       S 0.4028261715   Table 5 0.4028261715   diff  5.55e-17   OK
+  LightGBM       S 0.3822773213   Table 5 0.3822773213   diff  5.55e-17   OK
+
+WALK-FORWARD (5 expanding folds)
+  fold 2015-16:    3.3s
+  fold 2017-18:    3.6s
+  fold 2019-20:    3.9s
+  fold 2021-22:    4.4s
+  fold 2023-25:    4.5s
+  Sanity check: set S vs walk_forward_long_ratio.csv: 25 model-folds, max |R2 diff| = 2.22e-16
+
+RESULTS (metrics in index points; DM < 0 = set has lower loss than S)
+        Model Predictors  k  Train R2  Train adj. R2  Test R2  Test MAE  Test RMSE  WF mean R2  WF folds > S  DM SE vs S   p SE  DM AE vs S   p AE
+        HAR-X          S 11    0.7086         0.7075   0.3556   49.0207    74.2709      0.4048          <NA>         NaN    NaN         NaN    NaN
+        HAR-X          B 24    0.7200         0.7178   0.3602   48.9981    74.0108      0.4002             2     -0.3625 0.7171     -0.0502 0.9600
+        HAR-X        S+B 26    0.7195         0.7171   0.3601   49.0323    74.0130      0.3966             2     -0.3524 0.7246      0.0241 0.9808
+  Elastic Net          S 11    0.7071         0.7060   0.3519   49.1882    74.4888      0.4034          <NA>         NaN    NaN         NaN    NaN
+  Elastic Net          B 24    0.7171         0.7148   0.3695   48.5936    73.4684      0.4115             3     -1.5417 0.1235     -1.7526 0.0800
+  Elastic Net        S+B 26    0.7171         0.7146   0.3695   48.5935    73.4683      0.4075             3     -1.5417 0.1235     -1.7527 0.0800
+Random Forest          S 11    0.8236         0.8230   0.3772   49.1295    73.0212      0.4052          <NA>         NaN    NaN         NaN    NaN
+Random Forest          B 24    0.8448         0.8435   0.3712   48.7655    73.3715      0.4025             2      0.4994 0.6176     -0.7878 0.4310
+Random Forest        S+B 26    0.8514         0.8501   0.3739   48.7618    73.2143      0.4025             2      0.3211 0.7482     -0.8180 0.4135
+     CatBoost          S 11    0.8382         0.8376   0.4028   48.9887    71.5003      0.4033          <NA>         NaN    NaN         NaN    NaN
+     CatBoost          B 24    0.8680         0.8669   0.3721   48.8046    73.3196      0.3990             2      0.6977 0.4855     -0.2777 0.7813
+     CatBoost        S+B 26    0.8676         0.8665   0.3715   48.9250    73.3490      0.3980             2      0.7002 0.4840     -0.0990 0.9212
+     LightGBM          S 11    0.8509         0.8504   0.3823   49.6881    72.7201      0.3642          <NA>         NaN    NaN         NaN    NaN
+     LightGBM          B 24    0.8961         0.8952   0.3313   50.4745    75.6603      0.3502             2      1.0479 0.2950      0.9385 0.3482
+     LightGBM        S+B 26    0.8987         0.8979   0.3438   49.9690    74.9527      0.3524             2      0.9005 0.3681      0.3688 0.7124
+
+Walk-forward R2 by fold
+Fold               2015-16  2017-18  2019-20  2021-22  2023-25    Mean
+HAR-X         S     0.2053   0.5800   0.4829   0.3899   0.3657  0.4048
+              B     0.1527   0.6179   0.4776   0.3699   0.3827  0.4002
+              S+B   0.1377   0.6162   0.4751   0.3718   0.3820  0.3966
+Elastic Net   S     0.2133   0.5728   0.4824   0.3885   0.3603  0.4034
+              B     0.2092   0.5956   0.4765   0.3924   0.3837  0.4115
+              S+B   0.1891   0.5956   0.4765   0.3924   0.3837  0.4075
+Random Forest S     0.2046   0.5713   0.4732   0.3841   0.3927  0.4052
+              B     0.2167   0.5963   0.4334   0.3737   0.3924  0.4025
+              S+B   0.2102   0.6021   0.4378   0.3772   0.3849  0.4025
+CatBoost      S     0.2003   0.5834   0.4316   0.3612   0.4397  0.4033
+              B     0.1596   0.5879   0.5058   0.3451   0.3966  0.3990
+              S+B   0.1328   0.5889   0.5021   0.3603   0.4059  0.3980
+LightGBM      S     0.1527   0.5259   0.4096   0.3074   0.4253  0.3642
+              B     0.1580   0.5790   0.3641   0.2802   0.3699  0.3502
+              S+B   0.1568   0.5802   0.4009   0.2614   0.3628  0.3524
+
+Saved table_raw_bars_ratio.csv/.tex, raw_bars_walk_forward_long_ratio.csv, raw_bars_evidence_ratio.csv to results/tables/
+Total runtime: 25.5s

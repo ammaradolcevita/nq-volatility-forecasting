@@ -1,0 +1,7 @@
+Weekdays with a 09:30 bar: 4167; in dataset: 4021; excluded: 146
+reason
+U.S. holiday or shortened session (no regular 16:00 ET close)                           134
+session after a holiday without overnight trading (no Asia/London session)                6
+no entry in the calendar records collected from 30 Dec 2024 (no news classification)      3
+overnight trading locked at the CME price limit (zero London-session range)               2
+first day of the raw file (no previous close for the opening gap)                         1

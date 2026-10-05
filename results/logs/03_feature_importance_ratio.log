@@ -1,0 +1,36 @@
+Fitting models (spec=ratio) ...
+  HAR                done
+  HAR-X              done
+  LogHAR             done
+  Linear Regression  done
+  Ridge              done
+  Lasso              done
+  Elastic Net        done
+  Huber              done
+  Adaptive Lasso     done
+  Bayesian Ridge     done
+  Theil-Sen          done
+  Decision Tree      done
+  Random Forest      done
+  Extra Trees        done
+  Gradient Boosting  done
+  XGBoost            done
+  LightGBM           done
+  CatBoost           done
+  LSTM               done
+                 Feature   HAR  HAR-X  LogHAR  Linear Regression  Ridge  Lasso  Elastic Net  Huber  Adaptive Lasso  Bayesian Ridge  Theil-Sen  Decision Tree  Random Forest  Extra Trees  Gradient Boosting  XGBoost  LightGBM  CatBoost  LSTM
+             r_har_daily  46.8   12.1    41.9               12.1   12.3   12.4         12.6   11.9            12.1            12.3       11.8            0.0           11.1         12.5               36.5     12.0       9.0      16.3  21.1
+            r_har_weekly  53.2    7.7    58.1                7.7    8.0    8.6          9.3    9.4             8.6             8.0        7.4           32.1           10.3         14.6               12.2      7.8      10.2       2.1   4.0
+            r_asia_range   0.0   19.6     0.0               19.6   19.8   19.7         20.2   15.9            18.6            19.8       20.7            0.0           17.5         15.9                0.0     11.5      18.8      17.3  22.1
+                asia_dir   0.0    0.5     0.0                0.5    0.5    0.0          0.0    0.7             0.0             0.5        0.4            2.9            4.3          8.2                7.9     10.2       4.1      12.9   3.3
+          r_london_range   0.0   36.5     0.0               36.5   36.4   40.8         39.4   42.4            47.4            36.4       37.1           44.7           39.4         24.0               17.1     28.5      31.1      12.2  22.5
+              london_dir   0.0    0.9     0.0                0.9    0.8    0.3          0.3    0.8             0.0             0.9        0.8           13.4            4.3          5.2                3.3      8.3       9.6      13.7   1.8
+            r_ndog_range   0.0   11.6     0.0               11.6   11.9   11.8         12.2   11.6             9.9            11.8       10.6            0.0            8.6         10.8               15.5     15.2       9.8      14.4  12.6
+                   month   0.0    0.0     0.0                0.0    0.0    0.0          0.0    0.0             0.0             0.0        0.0            0.0            0.0          0.3                0.0      0.0       0.3       0.0   0.0
+                 weekday   0.0    0.0     0.0                0.0    0.0    0.0          0.0    0.0             0.0             0.0        0.0            0.0            0.0          0.0                0.0      0.0       0.5       0.0   2.3
+           impact_medium   0.0    0.0     0.0                0.0    0.0    0.0          0.0    0.0             0.0             0.0        0.0            0.5            0.6          1.3                0.0      0.8       0.0       0.2   2.8
+             impact_high   0.0   11.1     0.0               11.1   10.3    6.5          6.0    7.3             3.5            10.4       11.2            6.4            3.8          7.1                7.6      5.7       6.5      10.9   7.6
+         Group: Calendar   0.0    0.0     0.0                0.0    0.0    0.0          0.0    0.0             0.0             0.0        0.0            0.0            0.0          0.3                0.0      0.0       0.8       0.0   2.3
+       Group: Macro news   0.0   11.1     0.0               11.1   10.3    6.5          6.0    7.3             3.5            10.4       11.2            6.9            4.4          8.5                7.6      6.5       6.5      11.1  10.4
+Group: Persistence (HAR) 100.0   19.9   100.0               19.9   20.3   21.0         21.9   21.3            20.6            20.2       19.2           32.1           21.4         27.1               48.7     19.8      19.3      18.4  25.1
+          Group: Session   0.0   69.0     0.0               69.0   69.4   72.6         72.1   71.4            75.9            69.4       69.6           61.0           74.2         64.2               43.7     73.8      73.5      70.4  62.3

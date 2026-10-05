@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Out-of-sample forecast accuracy, chronological split (train 2009--2021, test 2022--2025) (scale-free specification)}
+\label{tab:main_ratio}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrrrrrrr}
+\toprule
+Model & Category & N train & N test & k & Train R2 & Train adj. R2 & Train MAE & Train RMSE & Test R2 & Test R2\_OOS (vs HAR) & Test MAE & Test RMSE & Test MAPE & R2 gap (train - test) \\
+\midrule
+HAR & Econometric & 3030 & 969 & 2 & 0.6705 & 0.6703 & 16.0760 & 28.4431 & 0.2454 & 0.0000 & 52.5827 & 80.3763 & 33.5373 & 0.4251 \\
+HAR-X & Econometric & 3030 & 969 & 11 & 0.7086 & 0.7075 & 14.9895 & 26.7496 & 0.3556 & 0.1462 & 49.0207 & 74.2709 & 30.5876 & 0.3529 \\
+LogHAR & Econometric & 3030 & 969 & 2 & 0.6687 & 0.6685 & 16.0577 & 28.5204 & 0.2545 & 0.0122 & 52.4456 & 79.8861 & 33.5951 & 0.4142 \\
+Linear Regression & Linear & 3030 & 969 & 11 & 0.7086 & 0.7075 & 14.9895 & 26.7496 & 0.3556 & 0.1462 & 49.0207 & 74.2709 & 30.5876 & 0.3529 \\
+Ridge & Linear & 3030 & 969 & 11 & 0.7085 & 0.7075 & 14.9936 & 26.7512 & 0.3553 & 0.1457 & 49.0398 & 74.2922 & 30.6263 & 0.3533 \\
+Lasso & Linear & 3030 & 969 & 11 & 0.7077 & 0.7066 & 15.0360 & 26.7909 & 0.3545 & 0.1446 & 49.0633 & 74.3392 & 30.7010 & 0.3532 \\
+Elastic Net & Linear & 3030 & 969 & 11 & 0.7071 & 0.7060 & 15.0604 & 26.8164 & 0.3519 & 0.1411 & 49.1882 & 74.4888 & 30.8421 & 0.3552 \\
+Huber & Linear & 3030 & 969 & 11 & 0.7103 & 0.7092 & 14.3893 & 26.6722 & 0.3429 & 0.1293 & 48.0628 & 75.0014 & 28.1376 & 0.3673 \\
+Adaptive Lasso & Linear & 3030 & 969 & 11 & 0.7060 & 0.7050 & 15.0895 & 26.8654 & 0.3511 & 0.1401 & 49.3721 & 74.5321 & 30.9197 & 0.3549 \\
+Bayesian Ridge & Linear & 3030 & 969 & 11 & 0.7085 & 0.7075 & 14.9929 & 26.7509 & 0.3553 & 0.1457 & 49.0370 & 74.2887 & 30.6206 & 0.3532 \\
+Theil-Sen & Linear & 3030 & 969 & 11 & 0.7086 & 0.7075 & 14.9902 & 26.7478 & 0.3575 & 0.1485 & 48.9488 & 74.1667 & 30.5191 & 0.3512 \\
+Decision Tree & Tree & 3030 & 969 & 11 & 0.7595 & 0.7586 & 13.2123 & 24.2994 & 0.1376 & -0.1428 & 57.7999 & 85.9241 & 35.8345 & 0.6219 \\
+Random Forest & Tree & 3030 & 969 & 11 & 0.8236 & 0.8230 & 11.3799 & 20.8088 & 0.3772 & 0.1746 & 49.1295 & 73.0212 & 30.7525 & 0.4465 \\
+Extra Trees & Tree & 3030 & 969 & 11 & 0.7676 & 0.7668 & 13.4428 & 23.8849 & 0.3659 & 0.1597 & 49.3275 & 73.6803 & 31.2950 & 0.4018 \\
+Gradient Boosting & Tree & 3030 & 969 & 11 & 0.8705 & 0.8700 & 10.8132 & 17.8312 & 0.3322 & 0.1151 & 50.2494 & 75.6097 & 31.1730 & 0.5383 \\
+XGBoost & Tree & 3030 & 969 & 11 & 0.9387 & 0.9385 & 7.3690 & 12.2653 & 0.3613 & 0.1537 & 50.2225 & 73.9417 & 31.2332 & 0.5774 \\
+LightGBM & Tree & 3030 & 969 & 11 & 0.8509 & 0.8504 & 11.0477 & 19.1306 & 0.3823 & 0.1814 & 49.6881 & 72.7201 & 30.9277 & 0.4687 \\
+CatBoost & Tree & 3030 & 969 & 11 & 0.8382 & 0.8376 & 11.9449 & 19.9324 & 0.4028 & 0.2087 & 48.9887 & 71.5003 & 30.6258 & 0.4354 \\
+LSTM & Deep learning & 3026 & 969 & 11 & 0.7109 & 0.7099 & 14.9950 & 26.6529 & 0.3525 & 0.1420 & 50.4017 & 74.4526 & 31.7771 & 0.3584 \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{2pt}\footnotesize\textit{Notes:} HAR-X and all machine-learning models use the same 11 predictors; all models are evaluated on the same test days. HAR and LogHAR use only the 2 persistence columns r\_har\_daily, r\_har\_weekly. LSTM: average forecast of 10 networks trained with different seeds.
+\end{table}

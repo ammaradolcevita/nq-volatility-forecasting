@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Session summaries versus individual 30-minute bars (scale-free specification)}
+\label{tab:rawbars_ratio}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrrrrrr}
+\toprule
+Model & Predictors & k & Train R2 & Train adj. R2 & Test R2 & Test MAE & Test RMSE & WF mean R2 & WF folds > S & DM SE vs S & p SE & DM AE vs S & p AE \\
+\midrule
+HAR-X & S & 11 & 0.7086 & 0.7075 & 0.3556 & 49.0207 & 74.2709 & 0.4048 & -- & -- & -- & -- & -- \\
+HAR-X & B & 24 & 0.7200 & 0.7178 & 0.3602 & 48.9981 & 74.0108 & 0.4002 & 2 & -0.3625 & 0.7171 & -0.0502 & 0.9600 \\
+HAR-X & S+B & 26 & 0.7195 & 0.7171 & 0.3601 & 49.0323 & 74.0130 & 0.3966 & 2 & -0.3524 & 0.7246 & 0.0241 & 0.9808 \\
+Elastic Net & S & 11 & 0.7071 & 0.7060 & 0.3519 & 49.1882 & 74.4888 & 0.4034 & -- & -- & -- & -- & -- \\
+Elastic Net & B & 24 & 0.7171 & 0.7148 & 0.3695 & 48.5936 & 73.4684 & 0.4115 & 3 & -1.5417 & 0.1235 & -1.7526 & 0.0800 \\
+Elastic Net & S+B & 26 & 0.7171 & 0.7146 & 0.3695 & 48.5935 & 73.4683 & 0.4075 & 3 & -1.5417 & 0.1235 & -1.7527 & 0.0800 \\
+Random Forest & S & 11 & 0.8236 & 0.8230 & 0.3772 & 49.1295 & 73.0212 & 0.4052 & -- & -- & -- & -- & -- \\
+Random Forest & B & 24 & 0.8448 & 0.8435 & 0.3712 & 48.7655 & 73.3715 & 0.4025 & 2 & 0.4994 & 0.6176 & -0.7878 & 0.4310 \\
+Random Forest & S+B & 26 & 0.8514 & 0.8501 & 0.3739 & 48.7618 & 73.2143 & 0.4025 & 2 & 0.3211 & 0.7482 & -0.8180 & 0.4135 \\
+CatBoost & S & 11 & 0.8382 & 0.8376 & 0.4028 & 48.9887 & 71.5003 & 0.4033 & -- & -- & -- & -- & -- \\
+CatBoost & B & 24 & 0.8680 & 0.8669 & 0.3721 & 48.8046 & 73.3196 & 0.3990 & 2 & 0.6977 & 0.4855 & -0.2777 & 0.7813 \\
+CatBoost & S+B & 26 & 0.8676 & 0.8665 & 0.3715 & 48.9250 & 73.3490 & 0.3980 & 2 & 0.7002 & 0.4840 & -0.0990 & 0.9212 \\
+LightGBM & S & 11 & 0.8509 & 0.8504 & 0.3823 & 49.6881 & 72.7201 & 0.3642 & -- & -- & -- & -- & -- \\
+LightGBM & B & 24 & 0.8961 & 0.8952 & 0.3313 & 50.4745 & 75.6603 & 0.3502 & 2 & 1.0479 & 0.2950 & 0.9385 & 0.3482 \\
+LightGBM & S+B & 26 & 0.8987 & 0.8979 & 0.3438 & 49.9690 & 74.9527 & 0.3524 & 2 & 0.9005 & 0.3681 & 0.3688 & 0.7124 \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{2pt}\footnotesize\textit{Notes:} S: the paper's predictors (asia\_range, asia\_dir, london\_range, london\_dir, ndog\_range, HAR components, month, weekday, impact\_medium, impact\_high). B: asia\_range and london\_range replaced by the high-low ranges of the 9 Asia and 6 London 30-minute bars. S+B: S plus the 15 bar ranges. Range variables divided by har\_monthly; forecasts rescaled to index points. Test: 2022-01-03 to 2025-11-25 (969 days). WF: mean out-of-sample R2 over the 5 expanding folds; WF folds > S: folds in which the set beats S. DM: Diebold-Mariano statistic (Newey-West, HLN) of the set against S under squared (SE) and absolute (AE) loss; negative values favour the set.
+\end{table}

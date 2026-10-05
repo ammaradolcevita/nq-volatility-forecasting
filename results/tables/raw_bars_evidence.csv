@@ -1,0 +1,38 @@
+Item,Value,Count,N
+match rate asia_range,1.0,4021.0,4021
+match rate asia_dir,1.0,4021.0,4021
+match rate london_range,1.0,4021.0,4021
+match rate london_dir,1.0,4021.0,4021
+days with missing bars,6.0,6.0,4021
+missing bars (total),13.0,13.0,60315
+days with missing bars (modelling sample),6.0,6.0,3999
+"corr(sum of asia bar ranges, asia_range) [all]",0.9589668778567179,,3999
+"corr(max of asia bar ranges, asia_range) [all]",0.9415260898509799,,3999
+mean pairwise corr among 9 asia bars [all],0.7424023732086904,,3999
+"corr(sum of london bar ranges, london_range) [all]",0.9530722668280786,,3999
+"corr(max of london bar ranges, london_range) [all]",0.9423093280973662,,3999
+mean pairwise corr among 6 london bars [all],0.781459932191058,,3999
+mean pairwise corr among 15 bars [all],0.7369106602930942,,3999
+min pairwise corr among 15 bars [all],0.6649407404382571,,3999
+max pairwise corr among 15 bars [all],0.8188481536935341,,3999
+mean VIF of the 15 bar ranges (among themselves) [all],3.9556569687188143,,3999
+max VIF of the 15 bar ranges (among themselves) [all],4.352273338362084,,3999
+"corr(asia_range, target) [all]",0.7228245136367093,,3999
+"corr(london_range, target) [all]",0.7651238592971422,,3999
+"mean corr(single bar range, target) [all]",0.7084078087132046,,3999
+"max corr(single bar range, target) [all]",0.7665018366012637,,3999
+"corr(sum of asia bar ranges, asia_range) [train]",0.9604821563432504,,3030
+"corr(max of asia bar ranges, asia_range) [train]",0.9454521117619445,,3030
+mean pairwise corr among 9 asia bars [train],0.7617051533978993,,3030
+"corr(sum of london bar ranges, london_range) [train]",0.9535059180787425,,3030
+"corr(max of london bar ranges, london_range) [train]",0.948547332042338,,3030
+mean pairwise corr among 6 london bars [train],0.7777548319884411,,3030
+mean pairwise corr among 15 bars [train],0.7510833318053278,,3030
+min pairwise corr among 15 bars [train],0.6743474020298408,,3030
+max pairwise corr among 15 bars [train],0.8380823047920403,,3030
+mean VIF of the 15 bar ranges (among themselves) [train],4.307430232195545,,3030
+max VIF of the 15 bar ranges (among themselves) [train],5.0656437962555785,,3030
+"corr(asia_range, target) [train]",0.7189426370180463,,3030
+"corr(london_range, target) [train]",0.7595263720429308,,3030
+"mean corr(single bar range, target) [train]",0.7046432389308521,,3030
+"max corr(single bar range, target) [train]",0.7546449936568369,,3030

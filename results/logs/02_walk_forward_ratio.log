@@ -1,0 +1,36 @@
+
+Fold train<= 2014 -> test 2015-2016  (N train 1283, N test 501)
+  best R2 in fold: Huber
+
+Fold train<= 2016 -> test 2017-2018  (N train 1784, N test 497)
+  best R2 in fold: CatBoost
+
+Fold train<= 2018 -> test 2019-2020  (N train 2281, N test 498)
+  best R2 in fold: Huber
+
+Fold train<= 2020 -> test 2021-2022  (N train 2779, N test 501)
+  best R2 in fold: Ridge
+
+Fold train<= 2022 -> test 2023-2025  (N train 3280, N test 719)
+  best R2 in fold: CatBoost
+
+             Model      Category  2015-16  2017-18  2019-20  2021-22  2023-25  Mean R2  SD R2  Mean MAE  Folds beating HAR (R2)
+              HAR   Econometric    0.139    0.502    0.434    0.326    0.244    0.329  0.145    31.695                       0
+            HAR-X   Econometric    0.205    0.580    0.483    0.390    0.366    0.405  0.140    29.737                       5
+           LogHAR   Econometric    0.150    0.500    0.429    0.326    0.255    0.332  0.139    31.621                       2
+Linear Regression        Linear    0.205    0.580    0.483    0.390    0.366    0.405  0.140    29.737                       5
+            Ridge        Linear    0.215    0.565    0.483    0.390    0.365    0.404  0.132    29.776                       5
+            Lasso        Linear    0.215    0.575    0.483    0.389    0.363    0.405  0.135    29.808                       5
+      Elastic Net        Linear    0.213    0.573    0.482    0.388    0.360    0.403  0.135    29.856                       5
+            Huber        Linear    0.247    0.565    0.505    0.372    0.354    0.409  0.127    28.814                       5
+   Adaptive Lasso        Linear    0.179    0.571    0.477    0.381    0.362    0.394  0.146    30.041                       5
+   Bayesian Ridge        Linear    0.214    0.579    0.483    0.390    0.365    0.406  0.137    29.738                       5
+        Theil-Sen        Linear    0.204    0.582    0.482    0.390    0.368    0.405  0.141    29.717                       5
+    Decision Tree          Tree    0.054    0.480    0.277    0.095    0.219    0.225  0.169    34.475                       0
+    Random Forest          Tree    0.205    0.571    0.473    0.384    0.393    0.405  0.135    29.939                       5
+      Extra Trees          Tree    0.192    0.534    0.479    0.390    0.371    0.393  0.131    30.038                       5
+Gradient Boosting          Tree    0.088    0.560    0.348    0.320    0.343    0.332  0.167    31.024                       2
+          XGBoost          Tree    0.124    0.493    0.347    0.287    0.383    0.327  0.136    31.430                       1
+         LightGBM          Tree    0.153    0.526    0.410    0.307    0.425    0.364  0.141    30.775                       3
+         CatBoost          Tree    0.200    0.583    0.432    0.361    0.440    0.403  0.139    29.947                       4
+             LSTM Deep learning    0.163    0.555    0.457    0.353    0.422    0.390  0.147    30.105                       5

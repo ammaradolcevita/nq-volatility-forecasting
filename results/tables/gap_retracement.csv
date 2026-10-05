@@ -1,0 +1,3 @@
+Sample,Days,Midpoint reached,Rate (%),"Binomial p (H0: 50%, one-sided)"
+All days,4021,2825,70.2561551852773,7.403769326821513e-150
+Non-zero gaps,3999,2803,70.0925231307827,1.2913968284014157e-146

@@ -1,0 +1,78 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Diebold--Mariano tests of equal predictive accuracy}
+\label{tab:dm}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllrrrrrrrrrll}
+\toprule
+Panel & Loss & Model A & Model B & Mean loss A & Mean loss B & Loss difference A vs B (\%) & DM & p-value & NW lag & Clark-West stat (vs HAR) & Clark-West p (one-sided) & Holm p-value & Better (raw p<0.05) & Better (Holm p<0.05) \\
+\midrule
+A: model vs HAR & SE & HAR-X & HAR & 5635.4607 & 6482.1381 & -13.0617 & -1.7591 & 0.0789 & 6 & 2.6073 & 0.0046 & 0.7878 & none & none \\
+A: model vs HAR & SE & LogHAR & HAR & 6352.1335 & 6482.1381 & -2.0056 & -1.1913 & 0.2338 & 6 & -- & -- & 0.7878 & none & none \\
+A: model vs HAR & SE & Ridge & HAR & 5637.6418 & 6482.1381 & -13.0281 & -1.7537 & 0.0798 & 6 & 2.6067 & 0.0046 & 0.7878 & none & none \\
+A: model vs HAR & SE & Lasso & HAR & 5635.5613 & 6482.1381 & -13.0601 & -1.7590 & 0.0789 & 6 & 2.6073 & 0.0046 & 0.7878 & none & none \\
+A: model vs HAR & SE & Elastic Net & HAR & 5635.8355 & 6482.1381 & -13.0559 & -1.7583 & 0.0790 & 6 & 2.6072 & 0.0046 & 0.7878 & none & none \\
+A: model vs HAR & SE & Huber & HAR & 6145.3680 & 6482.1381 & -5.1954 & -0.7567 & 0.4494 & 6 & 2.5423 & 0.0056 & 0.7878 & none & none \\
+A: model vs HAR & SE & Adaptive Lasso & HAR & 5635.4208 & 6482.1381 & -13.0623 & -1.7596 & 0.0788 & 6 & 2.6074 & 0.0046 & 0.7878 & none & none \\
+A: model vs HAR & SE & Bayesian Ridge & HAR & 5639.9352 & 6482.1381 & -12.9927 & -1.7482 & 0.0807 & 6 & 2.6061 & 0.0046 & 0.7878 & none & none \\
+A: model vs HAR & SE & Theil-Sen & HAR & 5643.0524 & 6482.1381 & -12.9446 & -1.7393 & 0.0823 & 6 & 2.6044 & 0.0047 & 0.7878 & none & none \\
+A: model vs HAR & SE & Decision Tree & HAR & 7948.3340 & 6482.1381 & 22.6190 & 3.5097 & 0.0005 & 6 & -- & -- & 0.0070 & HAR & HAR \\
+A: model vs HAR & SE & Random Forest & HAR & 6970.7015 & 6482.1381 & 7.5371 & 1.4835 & 0.1383 & 6 & -- & -- & 0.7878 & none & none \\
+A: model vs HAR & SE & Extra Trees & HAR & 7621.7936 & 6482.1381 & 17.5815 & 2.4777 & 0.0134 & 6 & -- & -- & 0.1473 & HAR & none \\
+A: model vs HAR & SE & Gradient Boosting & HAR & 7704.1817 & 6482.1381 & 18.8525 & 3.7755 & 0.0002 & 6 & -- & -- & 0.0027 & HAR & HAR \\
+A: model vs HAR & SE & XGBoost & HAR & 8357.9166 & 6482.1381 & 28.9377 & 3.1452 & 0.0017 & 6 & -- & -- & 0.0239 & HAR & HAR \\
+A: model vs HAR & SE & LightGBM & HAR & 7815.8576 & 6482.1381 & 20.5753 & 3.0962 & 0.0020 & 6 & -- & -- & 0.0262 & HAR & HAR \\
+A: model vs HAR & SE & CatBoost & HAR & 7528.6349 & 6482.1381 & 16.1443 & 2.8891 & 0.0039 & 6 & -- & -- & 0.0474 & HAR & HAR \\
+A: model vs HAR & SE & LSTM & HAR & 9235.2702 & 6482.1381 & 42.4726 & 4.4559 & 0.0000 & 6 & -- & -- & 0.0002 & HAR & HAR \\
+A: model vs HAR & AE & HAR-X & HAR & 48.1606 & 51.4318 & -6.3603 & -4.4786 & 0.0000 & 6 & -- & -- & 0.0001 & HAR-X & HAR-X \\
+A: model vs HAR & AE & LogHAR & HAR & 51.0323 & 51.4318 & -0.7769 & -1.2501 & 0.2115 & 6 & -- & -- & 0.6346 & none & none \\
+A: model vs HAR & AE & Ridge & HAR & 48.1663 & 51.4318 & -6.3493 & -4.4656 & 0.0000 & 6 & -- & -- & 0.0001 & Ridge & Ridge \\
+A: model vs HAR & AE & Lasso & HAR & 48.1606 & 51.4318 & -6.3603 & -4.4787 & 0.0000 & 6 & -- & -- & 0.0001 & Lasso & Lasso \\
+A: model vs HAR & AE & Elastic Net & HAR & 48.1615 & 51.4318 & -6.3587 & -4.4767 & 0.0000 & 6 & -- & -- & 0.0001 & Elastic Net & Elastic Net \\
+A: model vs HAR & AE & Huber & HAR & 49.6184 & 51.4318 & -3.5259 & -1.9112 & 0.0563 & 6 & -- & -- & 0.2814 & none & none \\
+A: model vs HAR & AE & Adaptive Lasso & HAR & 48.1576 & 51.4318 & -6.3662 & -4.4849 & 0.0000 & 6 & -- & -- & 0.0001 & Adaptive Lasso & Adaptive Lasso \\
+A: model vs HAR & AE & Bayesian Ridge & HAR & 48.1720 & 51.4318 & -6.3381 & -4.4523 & 0.0000 & 6 & -- & -- & 0.0001 & Bayesian Ridge & Bayesian Ridge \\
+A: model vs HAR & AE & Theil-Sen & HAR & 48.1526 & 51.4318 & -6.3760 & -4.4178 & 0.0000 & 6 & -- & -- & 0.0001 & Theil-Sen & Theil-Sen \\
+A: model vs HAR & AE & Decision Tree & HAR & 56.6444 & 51.4318 & 10.1349 & 3.8851 & 0.0001 & 6 & -- & -- & 0.0010 & HAR & HAR \\
+A: model vs HAR & AE & Random Forest & HAR & 50.5299 & 51.4318 & -1.7537 & -0.7565 & 0.4495 & 6 & -- & -- & 0.8897 & none & none \\
+A: model vs HAR & AE & Extra Trees & HAR & 52.4687 & 51.4318 & 2.0160 & 0.7644 & 0.4448 & 6 & -- & -- & 0.8897 & none & none \\
+A: model vs HAR & AE & Gradient Boosting & HAR & 55.4594 & 51.4318 & 7.8308 & 2.6990 & 0.0071 & 6 & -- & -- & 0.0424 & HAR & HAR \\
+A: model vs HAR & AE & XGBoost & HAR & 56.4890 & 51.4318 & 9.8327 & 3.2258 & 0.0013 & 6 & -- & -- & 0.0104 & HAR & HAR \\
+A: model vs HAR & AE & LightGBM & HAR & 55.6505 & 51.4318 & 8.2023 & 2.9871 & 0.0029 & 6 & -- & -- & 0.0202 & HAR & HAR \\
+A: model vs HAR & AE & CatBoost & HAR & 53.8524 & 51.4318 & 4.7064 & 1.6829 & 0.0927 & 6 & -- & -- & 0.3709 & none & none \\
+A: model vs HAR & AE & LSTM & HAR & 59.9146 & 51.4318 & 16.4932 & 4.6385 & 0.0000 & 6 & -- & -- & 0.0001 & HAR & HAR \\
+B: family champions & SE & HAR-X & Adaptive Lasso & 5635.4607 & 5635.4208 & 0.0007 & 0.1459 & 0.8840 & 6 & -- & -- & 0.8840 & none & none \\
+B: family champions & SE & HAR-X & Random Forest & 5635.4607 & 6970.7015 & -19.1550 & -1.8462 & 0.0652 & 6 & -- & -- & 0.1954 & none & none \\
+B: family champions & SE & HAR-X & LSTM & 5635.4607 & 9235.2702 & -38.9789 & -3.5857 & 0.0004 & 6 & -- & -- & 0.0018 & HAR-X & HAR-X \\
+B: family champions & SE & Adaptive Lasso & Random Forest & 5635.4208 & 6970.7015 & -19.1556 & -1.8465 & 0.0651 & 6 & -- & -- & 0.1954 & none & none \\
+B: family champions & SE & Adaptive Lasso & LSTM & 5635.4208 & 9235.2702 & -38.9794 & -3.5861 & 0.0004 & 6 & -- & -- & 0.0018 & Adaptive Lasso & Adaptive Lasso \\
+B: family champions & SE & Random Forest & LSTM & 6970.7015 & 9235.2702 & -24.5209 & -6.6335 & 0.0000 & 6 & -- & -- & 0.0000 & Random Forest & Random Forest \\
+B: family champions & AE & HAR-X & Adaptive Lasso & 48.1606 & 48.1576 & 0.0062 & 1.4200 & 0.1559 & 6 & -- & -- & 0.1559 & none & none \\
+B: family champions & AE & HAR-X & Random Forest & 48.1606 & 50.5299 & -4.6889 & -2.3817 & 0.0174 & 6 & -- & -- & 0.0517 & HAR-X & none \\
+B: family champions & AE & HAR-X & LSTM & 48.1606 & 59.9146 & -19.6179 & -6.7814 & 0.0000 & 6 & -- & -- & 0.0000 & HAR-X & HAR-X \\
+B: family champions & AE & Adaptive Lasso & Random Forest & 48.1576 & 50.5299 & -4.6949 & -2.3855 & 0.0172 & 6 & -- & -- & 0.0517 & Adaptive Lasso & none \\
+B: family champions & AE & Adaptive Lasso & LSTM & 48.1576 & 59.9146 & -19.6229 & -6.7845 & 0.0000 & 6 & -- & -- & 0.0000 & Adaptive Lasso & Adaptive Lasso \\
+B: family champions & AE & Random Forest & LSTM & 50.5299 & 59.9146 & -15.6634 & -8.4282 & 0.0000 & 6 & -- & -- & 0.0000 & Random Forest & Random Forest \\
+C: pairs in submitted manuscript & SE & Elastic Net & CatBoost & 5635.8355 & 7528.6349 & -25.1413 & -2.6332 & 0.0086 & 6 & -- & -- & 0.0515 & Elastic Net & none \\
+C: pairs in submitted manuscript & SE & Elastic Net & HAR-X & 5635.8355 & 5635.4607 & 0.0067 & 1.9653 & 0.0497 & 6 & -- & -- & 0.1490 & HAR-X & none \\
+C: pairs in submitted manuscript & SE & HAR-X & CatBoost & 5635.4607 & 7528.6349 & -25.1463 & -2.6337 & 0.0086 & 6 & -- & -- & 0.0515 & HAR-X & none \\
+C: pairs in submitted manuscript & SE & HAR-X & HAR & 5635.4607 & 6482.1381 & -13.0617 & -1.7591 & 0.0789 & 6 & 2.6073 & 0.0046 & 0.1577 & none & none \\
+C: pairs in submitted manuscript & SE & HAR-X & LSTM & 5635.4607 & 9235.2702 & -38.9789 & -3.5857 & 0.0004 & 6 & -- & -- & 0.0028 & HAR-X & HAR-X \\
+C: pairs in submitted manuscript & SE & CatBoost & LSTM & 7528.6349 & 9235.2702 & -18.4795 & -4.8872 & 0.0000 & 6 & -- & -- & 0.0000 & CatBoost & CatBoost \\
+C: pairs in submitted manuscript & SE & Elastic Net & LSTM & 5635.8355 & 9235.2702 & -38.9749 & -3.5854 & 0.0004 & 6 & -- & -- & 0.0028 & Elastic Net & Elastic Net \\
+C: pairs in submitted manuscript & SE & Elastic Net & Theil-Sen & 5635.8355 & 5643.0524 & -0.1279 & -1.4269 & 0.1539 & 6 & -- & -- & 0.1577 & none & none \\
+C: pairs in submitted manuscript & SE & CatBoost & XGBoost & 7528.6349 & 8357.9166 & -9.9221 & -2.5889 & 0.0098 & 6 & -- & -- & 0.0515 & CatBoost & none \\
+C: pairs in submitted manuscript & AE & Elastic Net & CatBoost & 48.1615 & 53.8524 & -10.5677 & -4.6285 & 0.0000 & 6 & -- & -- & 0.0000 & Elastic Net & Elastic Net \\
+C: pairs in submitted manuscript & AE & Elastic Net & HAR-X & 48.1615 & 48.1606 & 0.0018 & 0.8890 & 0.3742 & 6 & -- & -- & 0.7485 & none & none \\
+C: pairs in submitted manuscript & AE & HAR-X & CatBoost & 48.1606 & 53.8524 & -10.5693 & -4.6274 & 0.0000 & 6 & -- & -- & 0.0000 & HAR-X & HAR-X \\
+C: pairs in submitted manuscript & AE & HAR-X & HAR & 48.1606 & 51.4318 & -6.3603 & -4.4786 & 0.0000 & 6 & -- & -- & 0.0000 & HAR-X & HAR-X \\
+C: pairs in submitted manuscript & AE & HAR-X & LSTM & 48.1606 & 59.9146 & -19.6179 & -6.7814 & 0.0000 & 6 & -- & -- & 0.0000 & HAR-X & HAR-X \\
+C: pairs in submitted manuscript & AE & CatBoost & LSTM & 53.8524 & 59.9146 & -10.1180 & -5.5633 & 0.0000 & 6 & -- & -- & 0.0000 & CatBoost & CatBoost \\
+C: pairs in submitted manuscript & AE & Elastic Net & LSTM & 48.1615 & 59.9146 & -19.6165 & -6.7824 & 0.0000 & 6 & -- & -- & 0.0000 & Elastic Net & Elastic Net \\
+C: pairs in submitted manuscript & AE & Elastic Net & Theil-Sen & 48.1615 & 48.1526 & 0.0185 & 0.3229 & 0.7469 & 6 & -- & -- & 0.7485 & none & none \\
+C: pairs in submitted manuscript & AE & CatBoost & XGBoost & 53.8524 & 56.4890 & -4.6674 & -4.0231 & 0.0001 & 6 & -- & -- & 0.0002 & CatBoost & CatBoost \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{2pt}\footnotesize\textit{Notes:} Newey--West long-run variance (Bartlett kernel, bandwidth $\lfloor 4(T/100)^{2/9} \rfloor$), Harvey--Leybourne--Newbold correction, Student-$t$ p-values; Holm adjustment within each panel and loss function. Negative DM: model A more accurate. Clark--West (2007) statistics for nested comparisons against HAR (squared-error loss, one-sided).
+\end{table}

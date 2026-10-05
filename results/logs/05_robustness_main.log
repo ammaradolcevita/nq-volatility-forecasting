@@ -1,0 +1,47 @@
+Fitting models with `year` added (spec=main) ...
+            Model      Category  Train adj. R2 without year  Train adj. R2 with year  Test R2 without year  Test R2 with year  Test MSE change with year (%)  Test MAE change with year (%)  DM (SE) with vs without  p (SE)  DM (AE) with vs without  p (AE)
+            HAR-X   Econometric                      0.7137                   0.7173                0.3417             0.3459                        -0.6393                        -0.5812                  -1.1390  0.2550                  -1.5669  0.1175
+Linear Regression        Linear                      0.7137                   0.7173                0.3417             0.3459                        -0.6393                        -0.5812                  -1.1390  0.2550                  -1.5669  0.1175
+            Ridge        Linear                      0.7137                   0.7173                0.3415             0.3458                        -0.6556                        -0.5851                  -1.1635  0.2449                  -1.5824  0.1139
+            Lasso        Linear                      0.7137                   0.7173                0.3417             0.3459                        -0.6391                        -0.5810                  -1.1388  0.2551                  -1.5669  0.1175
+      Elastic Net        Linear                      0.7137                   0.7173                0.3417             0.3459                        -0.6437                        -0.5826                  -1.1505  0.2502                  -1.5753  0.1155
+            Huber        Linear                      0.7031                   0.7046                0.2822             0.2761                         0.8478                         0.3002                   2.9692  0.0031                   1.5789  0.1147
+   Adaptive Lasso        Linear                      0.7137                   0.7173                0.3417             0.3459                        -0.6387                        -0.5759                  -1.1385  0.2552                  -1.5533  0.1207
+   Bayesian Ridge        Linear                      0.7137                   0.7173                0.3412             0.3455                        -0.6607                        -0.5846                  -1.1562  0.2479                  -1.5758  0.1154
+        Theil-Sen        Linear                      0.7136                   0.7173                0.3408             0.3447                        -0.5912                        -0.5757                  -1.0355  0.3007                  -1.5329  0.1256
+    Decision Tree          Tree                      0.7969                   0.7980                0.0715             0.0721                        -0.0549                         0.0678                  -0.0920  0.9267                   0.0983  0.9217
+    Random Forest          Tree                      0.8328                   0.8336                0.1857             0.1955                        -1.1973                        -0.8570                  -3.9045  0.0001                  -2.9247  0.0035
+      Extra Trees          Tree                      0.7859                   0.7854                0.1097             0.1018                         0.8892                         0.4233                   1.7316  0.0837                   1.5376  0.1245
+Gradient Boosting          Tree                      0.9381                   0.9400                0.1001             0.1411                        -4.5589                        -2.8393                  -4.2194  0.0000                  -3.5420  0.0004
+          XGBoost          Tree                      0.9736                   0.9750                0.0237             0.0464                        -2.3204                        -0.8748                  -2.5314  0.0115                  -1.4067  0.1598
+         LightGBM          Tree                      0.8845                   0.8861                0.0870             0.0960                        -0.9838                        -1.1436                  -1.8718  0.0615                  -2.3615  0.0184
+         CatBoost          Tree                      0.9010                   0.9001                0.1206             0.1293                        -0.9964                        -1.6662                  -0.7580  0.4486                  -2.5186  0.0119
+             LSTM Deep learning                      0.6920                   0.6963               -0.0788             0.0196                        -9.1180                        -6.4255                 -11.5173  0.0000                  -9.5652  0.0000
+
+Regime-stratified split (submitted), with year: N train 3199, N test 800
+
+Regime-stratified split (submitted), without year: N train 3199, N test 800
+
+Chronological split (revised), with year: N train 3030, N test 969
+
+Chronological split (revised), without year: N train 3030, N test 969
+            Model      Category  Regime-stratified split (submitted), with year  Regime-stratified split (submitted), without year  Chronological split (revised), with year  Chronological split (revised), without year
+              HAR   Econometric                                           0.512                                              0.512                                     0.243                                        0.243
+            HAR-X   Econometric                                           0.594                                              0.588                                     0.346                                        0.342
+           LogHAR   Econometric                                           0.519                                              0.519                                     0.258                                        0.258
+Linear Regression        Linear                                           0.594                                              0.588                                     0.346                                        0.342
+            Ridge        Linear                                           0.594                                              0.588                                     0.346                                        0.341
+            Lasso        Linear                                           0.594                                              0.588                                     0.346                                        0.342
+      Elastic Net        Linear                                           0.594                                              0.588                                     0.346                                        0.342
+            Huber        Linear                                           0.577                                              0.575                                     0.276                                        0.282
+   Adaptive Lasso        Linear                                           0.594                                              0.588                                     0.346                                        0.342
+   Bayesian Ridge        Linear                                           0.594                                              0.588                                     0.346                                        0.341
+        Theil-Sen        Linear                                           0.594                                              0.588                                     0.345                                        0.341
+    Decision Tree          Tree                                           0.455                                              0.456                                     0.072                                        0.072
+    Random Forest          Tree                                           0.548                                              0.540                                     0.195                                        0.186
+      Extra Trees          Tree                                           0.516                                              0.508                                     0.102                                        0.110
+Gradient Boosting          Tree                                           0.561                                              0.553                                     0.141                                        0.100
+          XGBoost          Tree                                           0.514                                              0.526                                     0.046                                        0.024
+         LightGBM          Tree                                           0.540                                              0.532                                     0.096                                        0.087
+         CatBoost          Tree                                           0.565                                              0.562                                     0.129                                        0.121
+             LSTM Deep learning                                           0.553                                              0.535                                     0.020                                       -0.079

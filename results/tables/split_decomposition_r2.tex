@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Test $R^2$ under the submitted and the revised sample split}
+\label{tab:split_decomp}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrr}
+\toprule
+Model & Category & Regime-stratified split (submitted), with year & Regime-stratified split (submitted), without year & Chronological split (revised), with year & Chronological split (revised), without year \\
+\midrule
+HAR & Econometric & 0.512 & 0.512 & 0.243 & 0.243 \\
+HAR-X & Econometric & 0.594 & 0.588 & 0.346 & 0.342 \\
+LogHAR & Econometric & 0.519 & 0.519 & 0.258 & 0.258 \\
+Linear Regression & Linear & 0.594 & 0.588 & 0.346 & 0.342 \\
+Ridge & Linear & 0.594 & 0.588 & 0.346 & 0.341 \\
+Lasso & Linear & 0.594 & 0.588 & 0.346 & 0.342 \\
+Elastic Net & Linear & 0.594 & 0.588 & 0.346 & 0.342 \\
+Huber & Linear & 0.577 & 0.575 & 0.276 & 0.282 \\
+Adaptive Lasso & Linear & 0.594 & 0.588 & 0.346 & 0.342 \\
+Bayesian Ridge & Linear & 0.594 & 0.588 & 0.346 & 0.341 \\
+Theil-Sen & Linear & 0.594 & 0.588 & 0.345 & 0.341 \\
+Decision Tree & Tree & 0.455 & 0.456 & 0.072 & 0.072 \\
+Random Forest & Tree & 0.548 & 0.540 & 0.195 & 0.186 \\
+Extra Trees & Tree & 0.516 & 0.508 & 0.102 & 0.110 \\
+Gradient Boosting & Tree & 0.561 & 0.553 & 0.141 & 0.100 \\
+XGBoost & Tree & 0.514 & 0.526 & 0.046 & 0.024 \\
+LightGBM & Tree & 0.540 & 0.532 & 0.096 & 0.087 \\
+CatBoost & Tree & 0.565 & 0.562 & 0.129 & 0.121 \\
+LSTM & Deep learning & 0.553 & 0.535 & 0.020 & -0.079 \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{2pt}\footnotesize\textit{Notes:} All designs use the revised common predictor set. The regime-stratified split mixes 2017--2019 and 2024--2025 test days and trains on 2020--2024.
+\end{table}

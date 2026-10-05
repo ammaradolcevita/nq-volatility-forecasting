@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Adding \texttt{year} as a predictor: in-sample adjusted and out-of-sample fit (scale-free specification)}
+\label{tab:year_ratio}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrrrr}
+\toprule
+Model & Category & Train adj. R2 without year & Train adj. R2 with year & Test R2 without year & Test R2 with year & Test MSE change with year (\%) & Test MAE change with year (\%) & DM (SE) with vs without & p (SE) & DM (AE) with vs without & p (AE) \\
+\midrule
+HAR-X & Econometric & 0.7075 & 0.7077 & 0.3556 & 0.3563 & -0.0953 & -0.2333 & -1.0360 & 0.3004 & -4.3248 & 0.0000 \\
+Linear Regression & Linear & 0.7075 & 0.7077 & 0.3556 & 0.3563 & -0.0953 & -0.2333 & -1.0360 & 0.3004 & -4.3248 & 0.0000 \\
+Ridge & Linear & 0.7075 & 0.7077 & 0.3553 & 0.3559 & -0.0980 & -0.2430 & -1.0389 & 0.2991 & -4.3736 & 0.0000 \\
+Lasso & Linear & 0.7066 & 0.7065 & 0.3545 & 0.3545 & 0.0000 & 0.0000 & -- & -- & -- & -- \\
+Elastic Net & Linear & 0.7060 & 0.7059 & 0.3519 & 0.3519 & 0.0000 & 0.0000 & -- & -- & -- & -- \\
+Huber & Linear & 0.7092 & 0.7082 & 0.3429 & 0.3326 & 1.5693 & 0.0898 & 3.1788 & 0.0015 & 0.2696 & 0.7876 \\
+Adaptive Lasso & Linear & 0.7050 & 0.7049 & 0.3511 & 0.3511 & 0.0052 & 0.0077 & 1.0881 & 0.2768 & 2.8285 & 0.0048 \\
+Bayesian Ridge & Linear & 0.7075 & 0.7077 & 0.3553 & 0.3559 & -0.0929 & -0.2397 & -0.9488 & 0.3429 & -4.3522 & 0.0000 \\
+Theil-Sen & Linear & 0.7075 & 0.7078 & 0.3575 & 0.3582 & -0.1167 & -0.2745 & -1.0557 & 0.2914 & -4.1343 & 0.0000 \\
+Decision Tree & Tree & 0.7586 & 0.7589 & 0.1376 & 0.0917 & 5.3220 & 2.6185 & 2.8903 & 0.0039 & 2.1702 & 0.0302 \\
+Random Forest & Tree & 0.8230 & 0.8251 & 0.3772 & 0.3621 & 2.4232 & 0.6032 & 1.7716 & 0.0768 & 1.6002 & 0.1099 \\
+Extra Trees & Tree & 0.7668 & 0.7706 & 0.3659 & 0.3561 & 1.5381 & 0.1805 & 1.1289 & 0.2592 & 0.7134 & 0.4758 \\
+Gradient Boosting & Tree & 0.8700 & 0.8768 & 0.3322 & 0.3040 & 4.2273 & 1.2554 & 1.9614 & 0.0501 & 1.5822 & 0.1139 \\
+XGBoost & Tree & 0.9385 & 0.9475 & 0.3613 & 0.3434 & 2.8181 & 2.3674 & 1.7078 & 0.0880 & 2.2227 & 0.0265 \\
+LightGBM & Tree & 0.8504 & 0.8607 & 0.3823 & 0.3676 & 2.3753 & 1.2662 & 1.2575 & 0.2089 & 1.3292 & 0.1841 \\
+CatBoost & Tree & 0.8376 & 0.8458 & 0.4028 & 0.3613 & 6.9596 & -0.1338 & 1.0573 & 0.2907 & -0.1708 & 0.8644 \\
+LSTM & Deep learning & 0.7099 & 0.7084 & 0.3525 & 0.3396 & 1.9961 & -1.4425 & 1.2514 & 0.2111 & -1.6649 & 0.0963 \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{2pt}\footnotesize\textit{Notes:} Negative DM statistic: the specification with year has lower expected loss. Newey--West/HLN Diebold--Mariano test on the 2022--2025 test period.
+\end{table}
