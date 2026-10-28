@@ -1,0 +1,18 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install the libraries the tests need
+        run: pip install numpy==2.4.4 pandas==3.0.2 scipy==1.17.1 pytest
+      - name: Run tests
+        run: pytest -q
